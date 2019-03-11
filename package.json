@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pixari/meet/issues"
   },
-  "homepage": "https://github.com/pixari/meet#readme"
+  "homepage": "https://github.com/pixari/meet#readme",
+  "devDependencies": {
+    "lerna": "^3.13.1"
+  }
 }
