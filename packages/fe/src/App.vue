@@ -1,35 +1,24 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-toolbar>
-
-    <v-content>
-      <router-view/>
-    </v-content>
+    <component :is="layout" />
   </v-app>
 </template>
 
 <script>
+import DefaultLayout from '@/layout/default/DefaultLayout.vue';
+
+const defaultLayout = 'default';
 
 export default {
   name: 'App',
-  data () {
-    return {
-      //
-    }
-  }
-}
+  components: {
+    DefaultLayout,
+  },
+
+  computed: {
+    layout() {
+      return `${(this.$route.meta.layout || defaultLayout)}-layout`;
+    },
+  },
+};
 </script>
