@@ -12,13 +12,7 @@ import { ConfigModule } from 'src/config/config.module';
     UserModule,
     PassportModule.register({ defaultStrategy: 'jwt' }),
     ConfigModule,
-    JwtModule.register({
-      // TODO: use key from config file
-      secretOrPrivateKey: 'secretKey',
-      signOptions: {
-        expiresIn: 3600,
-      },
-    }),
+    JwtModule,
   ],
   providers: [AuthService, JwtStrategy],
   controllers: [AuthController],

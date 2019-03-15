@@ -5,7 +5,7 @@ import { ConfigService } from '../../src/config/config.service';
 
 @Injectable()
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
-  constructor(private readonly configService: ConfigService) { }
+  constructor(private readonly configService: ConfigService) {}
 
   createTypeOrmOptions(): TypeOrmModuleOptions {
     Logger.log(`Creating DB connection with following options: ${JSON.stringify(this.configService)}`, 'TypeOrmOptionsFactory');
