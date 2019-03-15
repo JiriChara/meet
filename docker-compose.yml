@@ -14,7 +14,8 @@ services:
       context: packages/be/.
       dockerfile: Dockerfile
     volumes:
-      - . .
+      - ./packages/be:/var/www
+      - /var/www/node_modules
     environment:
       - NODE_ENV=docker
     ports:
@@ -32,4 +33,5 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - . .
+      - ./packages/fe:/var/www/
+      - /var/www/node_modules
