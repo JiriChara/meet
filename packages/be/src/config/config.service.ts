@@ -40,6 +40,10 @@ export class ConfigService {
     return this.get('DATABASE_NAME');
   }
 
+  get jwtSecreateKey(): string {
+    return this.get('JWT_SECRET_KEY');
+  }
+
   private validateInput(envConfig: EnvConfig): EnvConfig {
     const envVarsSchema: ObjectSchema = object({
       NODE_ENV: string()
@@ -50,6 +54,7 @@ export class ConfigService {
       DATABASE_HOST: string(),
       DATABASE_PORT: number(),
       DATABASE_NAME: string(),
+      JWT_SECRET_KEY: string(),
     });
 
     const { error, value: validatedEnvConfig } = validate(
