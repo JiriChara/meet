@@ -5,7 +5,7 @@ import { name, internet } from 'faker';
 import { UserService } from './user.service';
 import { User } from './user.entity';
 
-describe('UserService', () => {
+describe('User Service', () => {
   let service: UserService;
 
   const mockRepository = {
